@@ -438,64 +438,89 @@ bool* multu(bool output[],bool input1[],bool input2[]) // the problem does not t
 	output[6]=0;
 	output[7]=0;
 	output=mux_8bit(waist,input1[0],addu(waist2,output,input2),output);
-	print_value(output);
+	//print_value(output);
 	input2=shift_left(waist3,input2);
-	print_value(input2);
+	//print_value(input2);
 	
-	output=mux_8bit(waist4,input1[1],addu(waist5,output,input2),output);
-	print_value(output);
+	output=mux_8bit(waist4,input1[1],addu(waist5,output,input2),output); // the error is here......but....
+	//print_value(output);
 	input2=shift_left(waist6,input2);
-	print_value(input2);
+	//print_value(input2);
 	
 	output=mux_8bit(waist7,input1[2],addu(waist8,output,input2),output);
-	print_value(output);
+	//print_value(output);
 	input2=shift_left(waist9,input2);
 	
 	output=mux_8bit(waist10,input1[3],addu(waist11,output,input2),output);
+	//print_value(output);
 	input2=shift_left(waist,input2);
+	
 	output=mux_8bit(waist12,input1[4],addu(waist13,output,input2),output);
+	//print_value(output);
 	input2=shift_left(waist14,input2);
+	
 	output=mux_8bit(waist15,input1[5],addu(waist16,output,input2),output);
+	//print_value(output);
 	input2=shift_left(waist17,input2);
+	
 	output=mux_8bit(waist18,input1[6],addu(waist19,output,input2),output);
+	//print_value(output);
 	input2=shift_left(waist20,input2);
+	
 	output=mux_8bit(waist21,input1[7],addu(waist22,output,input2),output);
+	print_value(output);
 	
 	return output;
 }
-
 //---------------------------
 
-bool* mult(bool output[],bool input1[],bool input2[]) // the problem does not tell for output size, so i am assuming it is 8 bits just like the rest of the functions. If this is not the case(for this and other similer functions) please further clearify the problems so that the proper results may be acheived.
+bool* multu(bool output[],bool input1[],bool input2[]) // the problem does not tell for output size, so i am assuming it is 8 bits just like the rest of the functions. If this is not the case(for this and other similer functions) please further clearify the problems so that the proper results may be acheived.
 {
-	mux_8bit(output,input1[0],adds(output,output,input1),output);
-	shift_left(input2,input2);
-	shift_right(input1,input1);
-	mux_8bit(output,input1[1],adds(output,output,input1),output);
-	shift_left(input2,input2);
-	shift_right(input1,input1);
-	mux_8bit(output,input1[2],adds(output,output,input1),output);
-	shift_left(input2,input2);
-	shift_right(input1,input1);
-	mux_8bit(output,input1[3],adds(output,output,input1),output);
-	shift_left(input2,input2);
-	shift_right(input1,input1);
-	mux_8bit(output,input1[4],adds(output,output,input1),output);
-	shift_left(input2,input2);
-	shift_right(input1,input1);
-	mux_8bit(output,input1[5],adds(output,output,input1),output);
-	shift_left(input2,input2);
-	shift_right(input1,input1);
-	mux_8bit(output,input1[6],adds(output,output,input1),output);
-	shift_left(input2,input2);
-	shift_right(input1,input1);
-	mux_8bit(output,input1[7],adds(output,output,input1),output);
-	shift_left(input2,input2);
-	shift_right(input1,input1);
+	bool waist[7],waist2[7],waist3[7],waist4[7],waist5[7],waist6[7],waist7[7],waist8[7],waist9[7];
+	bool waist10[7],waist11[7],waist12[7],waist13[7],waist14[7],waist15[7],waist16[7],waist17[7],waist18[7],waist19[7],waist20[7],waist21[7],waist22[7];
+	output[0]=0;
+	output[1]=0;
+	output[2]=0;
+	output[3]=0;
+	output[4]=0;
+	output[5]=0;
+	output[6]=0;
+	output[7]=0;
+	output=mux_8bit(waist,input1[0],add(waist2,output,input2),output);
+	//print_value(output);
+	input2=shift_left(waist3,input2);
+	//print_value(input2);
+	
+	output=mux_8bit(waist4,input1[1],add(waist5,output,input2),output); // the error is here......but....
+	//print_value(output);
+	input2=shift_left(waist6,input2);
+	//print_value(input2);
+	
+	output=mux_8bit(waist7,input1[2],add(waist8,output,input2),output);
+	//print_value(output);
+	input2=shift_left(waist9,input2);
+	
+	output=mux_8bit(waist10,input1[3],add(waist11,output,input2),output);
+	//print_value(output);
+	input2=shift_left(waist,input2);
+	
+	output=mux_8bit(waist12,input1[4],add(waist13,output,input2),output);
+	//print_value(output);
+	input2=shift_left(waist14,input2);
+	
+	output=mux_8bit(waist15,input1[5],add(waist16,output,input2),output);
+	//print_value(output);
+	input2=shift_left(waist17,input2);
+	
+	output=mux_8bit(waist18,input1[6],add(waist19,output,input2),output);
+	//print_value(output);
+	input2=shift_left(waist20,input2);
+	
+	output=mux_8bit(waist21,input1[7],add(waist22,output,input2),output);
+	print_value(output);
 	
 	return output;
 }
-
 //---------------------------
 
 bool* divu(bool output[],bool input1[],bool input2[]) // takes four bit numbers
