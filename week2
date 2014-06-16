@@ -249,11 +249,11 @@ try{
 	
 	cout << "functions not working properly in alu - multu\n";
 	out=multu(output,input1,input2);
-	print_value(out);
+	//print_value(out);
 
 	cout << "mult\n";
 	out=mult(output,input1,input2);
-	print_value(out);
+	//print_value(out);
 
 	cout << "divu\n";
 	out=divu(output,input1,input2);
