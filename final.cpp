@@ -1,0 +1,459 @@
+int main ()
+{
+try{
+	Program pipe;
+	pipe.initialize("program1.txt");
+	pipe.pipeline();
+	
+
+// these are the old test benches if you need them, they might require some varible changing to work though...
+
+/*
+cout << "\n\nweek three\n\n\n"; //--------------------------------------
+	Program program;
+	program.initialize("in.txt");
+	program.instruction_fetch();
+	program.process_instruction();
+	program.instruction_fetch();
+	program.process_instruction();
+	program.instruction_fetch();
+	program.process_instruction();
+	
+
+	reg r;
+	r.initialize();
+	mem m;
+	m.initialize();
+/*cout << "\n\nweek two\n\n\n"; //--------------------------------------	
+	
+	bool* out;
+	bool input1[7];
+	input1[0]=1;
+	input1[1]=1;
+	input1[2]=0;
+	input1[3]=1;
+	input1[4]=0;
+	input1[5]=0;
+	input1[6]=0;
+	input1[7]=0;
+	bool input2[7];
+	input2[0]=1;
+	input2[1]=1;
+	input2[2]=0;
+	input2[3]=0;
+	input2[4]=0;
+	input2[5]=0;
+	input2[6]=0;
+	input2[7]=0;
+	bool output[7];
+	output[0]=0;
+	output[1]=0;
+	output[2]=0;
+	output[3]=0;
+	output[4]=0;
+	output[5]=0;
+	output[6]=0;
+	output[7]=0;
+	
+	bool Add[7];
+	Add[0]=0;
+	Add[1]=0;
+	Add[2]=0;
+	Add[3]=0;
+	Add[4]=0;
+	Add[5]=0;
+	Add[6]=0;
+	Add[7]=0;
+	bool Sub[7];
+	Sub[0]=1;
+	Sub[1]=0;
+	Sub[2]=0;
+	Sub[3]=0;
+	Sub[4]=0;
+	Sub[5]=0;
+	Sub[6]=0;
+	Sub[7]=0;
+	bool neg[7];
+	neg[0]=0;
+	neg[1]=1;
+	neg[2]=0;
+	neg[3]=0;
+	neg[4]=0;
+	neg[5]=0;
+	neg[6]=0;
+	neg[7]=0;
+	bool eq[7];
+	eq[0]=1;
+	eq[1]=1;
+	eq[2]=0;
+	eq[3]=0;
+	eq[4]=0;
+	eq[5]=0;
+	eq[6]=0;
+	eq[7]=0;
+	bool lt[7];
+	lt[0]=0;
+	lt[1]=0;
+	lt[2]=1;
+	lt[3]=0;
+	lt[4]=0;
+	lt[5]=0;
+	lt[6]=0;
+	lt[7]=0;
+	bool gt[7];
+	gt[0]=1;
+	gt[1]=0;
+	gt[2]=1;
+	gt[3]=0;
+	gt[4]=0;
+	gt[5]=0;
+	gt[6]=0;
+	gt[7]=0;
+	bool aNd[7];
+	aNd[0]=0;
+	aNd[1]=1;
+	aNd[2]=1;
+	aNd[3]=0;
+	aNd[4]=0;
+	aNd[5]=0;
+	aNd[6]=0;
+	aNd[7]=0;
+	bool oR[7];
+	oR[0]=1;
+	oR[1]=1;
+	oR[2]=1;
+	oR[3]=0;
+	oR[4]=0;
+	oR[5]=0;
+	oR[6]=0;
+	oR[7]=0;
+	bool sll[7];
+	sll[0]=0;
+	sll[1]=0;
+	sll[2]=0;
+	sll[3]=1;
+	sll[4]=0;
+	sll[5]=0;
+	sll[6]=0;
+	sll[7]=0;
+	bool srl[7];
+	srl[0]=1;
+	srl[1]=0;
+	srl[2]=0;
+	srl[3]=1;
+	srl[4]=0;
+	srl[5]=0;
+	srl[6]=0;
+	srl[7]=0;
+	bool Multu[7];
+	Multu[0]=0;
+	Multu[1]=1;
+	Multu[2]=0;
+	Multu[3]=1;
+	Multu[4]=0;
+	Multu[5]=0;
+	Multu[6]=0;
+	Multu[7]=0;
+	bool Mult[7];
+	Mult[0]=1;
+	Mult[1]=1;
+	Mult[2]=0;
+	Mult[3]=1;
+	Mult[4]=0;
+	Mult[5]=0;
+	Mult[6]=0;
+	Mult[7]=0;
+	bool Divu[7];
+	Divu[0]=0;
+	Divu[1]=0;
+	Divu[2]=1;
+	Divu[3]=1;
+	Divu[4]=0;
+	Divu[5]=0;
+	Divu[6]=0;
+	Divu[7]=0;
+	bool Div[7];
+	Div[0]=1;
+	Div[1]=0;
+	Div[2]=1;
+	Div[3]=1;
+	Div[4]=0;
+	Div[5]=0;
+	Div[6]=0;
+	Div[7]=0;
+	bool LW[7];
+	Divu[0]=0;
+	Divu[1]=1;
+	Divu[2]=1;
+	Divu[3]=1;
+	Divu[4]=0;
+	Divu[5]=0;
+	Divu[6]=0;
+	Divu[7]=0;
+	bool SW[7];
+	Div[0]=1;
+	Div[1]=1;
+	Div[2]=1;
+	Div[3]=1;
+	Div[4]=0;
+	Div[5]=0;
+	Div[6]=0;
+	Div[7]=0;
+	bool Addu[7];
+	Addu[0]=0;
+	Addu[1]=0;
+	Addu[2]=0;
+	Addu[3]=0;
+	Addu[4]=1;
+	Addu[5]=0;
+	Addu[6]=0;
+	Addu[7]=0;
+	bool Subu[7];
+	Subu[0]=1;
+	Subu[1]=0;
+	Subu[2]=0;
+	Subu[3]=0;
+	Subu[4]=1;
+	Subu[5]=0;
+	Subu[6]=0;
+	Subu[7]=0;
+	
+	
+	cout << "add\n";
+	out=alu(output, Add, input1,input2,m);
+	print_value(out);
+	//cout << input1[0] << '\n';
+
+	cout << "sub\n";
+	out=alu(output, Sub, input1,input2,m);
+	print_value(out);
+
+	cout << "neg\n";
+	out=alu(output, neg, input1,input2,m);
+	print_value(out);
+
+	cout << "eq\n";
+	out=alu(output, eq, input1,input2,m);
+	print_value(out);
+
+	cout << "lt\n";
+	out=alu(output, lt, input1,input2,m);
+	print_value(out);
+
+	cout << "gt\n";
+	out=alu(output, gt, input1,input2,m);
+	print_value(out);
+
+	cout << "aNd\n";
+	out=alu(output, aNd, input1,input2,m);
+	print_value(out);
+
+	cout << "oR\n";
+	out=alu(output, oR, input1,input2,m);
+	print_value(out);
+
+	cout << "sll\n";
+	out=alu(output, sll, input1,input2,m);
+	print_value(out);
+
+	cout << "srl\n";
+	out=alu(output, srl, input1,input2,m);
+	print_value(out);
+
+	cout << "multu\n";
+	out=alu(output, Multu, input1,input2,m);
+	print_value(out);
+
+	cout << "mult\n";
+	out=alu(output, Mult, input1,input2,m);
+	print_value(out);
+
+	cout << "divu\n";
+	out=alu(output, Divu, input1,input2,m);
+	print_value(out);
+
+	cout << "div\n";
+	out=alu(output, Div, input1,input2,m);
+	print_value(out);
+
+	cout << "addu\n";
+	out=alu(output, Addu, input1,input2,m);
+	print_value(out);
+
+	cout << "subu\n";
+	out=alu(output, Subu, input1,input2,m);
+	print_value(out);
+	
+	
+	cout << "functions not working properly in alu - multu\n";
+	out=multu(output,input1,input2);
+	//print_value(output);
+
+	cout << "mult\n";
+	out=mult(output,input1,input2);
+	print_value(out);
+
+	cout << "divu\n";
+	out=divu(output,input1,input2);
+	print_value(out);
+
+	cout << "div\n";
+	out=divs(output,input1,input2);
+	print_value(out);
+	
+	
+	
+	
+	
+
+
+cout << "\n\nweek one\n\n\n"; //--------------------------------------
+
+ bool t = true,f=false,out_old;
+ 
+ // 0 is the least significant bit
+
+	input1[0]=1;
+	input1[1]=1;
+	input1[2]=0;
+	input1[3]=1;
+	input1[4]=0;
+	input1[5]=0;
+	input1[6]=0;
+	input1[7]=0;
+	input2[0]=1;
+	input2[1]=1;
+	input2[2]=0;
+	input2[3]=0;
+	input2[4]=0;
+	input2[5]=0;
+	input2[6]=0;
+	input2[7]=0;
+ 
+ cout << "values should be f,t" <<'\n';
+ 
+ cout << "and ";
+ out_old = And(t,f);
+ bool_print(out_old);
+ out_old = And(t,t);
+ bool_print(out_old);
+ cout << "or ";
+ out_old = Or(f,f);
+ bool_print(out_old);
+ out_old = Or(t,f);
+ bool_print(out_old);
+ cout << "not ";
+ out_old = Not(t);
+ bool_print(out_old);
+ out_old = Not(f);
+ bool_print(out_old);
+ cout << "xor ";
+ out_old = xOr(t,t);
+ bool_print(out_old);
+ out_old = xOr(t,f);
+ bool_print(out_old);
+ cout << "mux ";
+ out_old = mux(t,f,t);
+ bool_print(out_old);
+ out_old = mux(f,f,t);
+ bool_print(out_old);
+ cout << "sum small ";
+ out_old = sum(t,t);
+ bool_print(out_old);
+ out_old = sum(t,f);
+ bool_print(out_old);
+ cout << "sum big ";
+ out_old = sum(t,t,f);
+ bool_print(out_old);
+ out_old = sum(t,f,f);
+ bool_print(out_old);
+ cout << "carry ";
+ out_old = carry_out(t,f,f);
+ bool_print(out_old);
+ out_old = carry_out(t,t,f);
+ bool_print(out_old);
+ cout << "Equal ";
+ out_old = Equal(t,f);
+ bool_print(out_old);
+ out_old = Equal(f,f);
+ bool_print(out_old);
+ 
+ cout << "part two" << '\n' << "input1:: ";
+ get_value(input1,7);
+ print_value(input1);
+ print_value_in_decimal(input1);
+ cout << "input2:: "; 
+ print_value(input2);
+ print_value_in_decimal(input2);
+ cout << "mux ( input one will be in the first slot and 2 in the second for the the first example of each the following functions)";
+ mux_8bit(output,f,input1,input2);
+ print_value(output);
+ mux_8bit(output,t,input1,input2);
+ print_value(output);
+ cout << "addu ";
+ addu(output,input1,input2);
+ print_value(output);
+ cout << "Negate ";
+ Negate(output,input1);
+ print_value(output);
+ Negate(output,input2);
+ print_value(output);
+ cout << "subu ";
+ subu(output,input1,input2);
+ print_value(output);
+ 
+ cout << "Equal_8bit ";
+ out_old=Equal_8bit( input1,  input2);
+ bool_print(out_old);
+ 
+ cout << "lessthan_8bit ";
+ out_old=lessthan_8bit( input1,  input2);
+ bool_print(out_old);
+ 
+ cout << "greaterthan_8bit ";
+ out_old=greaterthan_8bit( input1,  input2);
+ bool_print(out_old);
+ 
+ cout << "Equal_8bit_8out ";
+ Equal_8bit_8out( output, input1,  input2);
+ print_value(output);
+ 
+ cout << "lessthan_8bit_8out ";
+ lessthan_8bit_8out( output, input1,  input2);
+ print_value(output);
+ 
+ 
+ cout << "greaterthan_8bit_8out ";
+ greaterthan_8bit_8out( output, input1,  input2);
+ print_value(output);
+ 
+ cout << "And_8bit ";
+ And_8bit( output,  input1,  input2);
+ print_value(output);
+ 
+ cout << "Or_8bit ";
+ Or_8bit( output,  input1,  input2);
+ print_value(output);
+ 
+ cout << "shift_left ";
+ shift_left( output,  input1);
+ print_value(output);
+ shift_left( output,  input2);
+ print_value(output);
+ 
+ cout << "shift_right ";
+ shift_right( output,  input1);
+ print_value(output);
+ shift_right( output,  input2);
+ print_value(output);*/
+ }
+ catch(int e)
+	{
+		cout << "overflow\n";
+	}
+	catch(char c)
+	{
+		cout << "Segmentation fault! =0 (what? you thought I'd throw something else?)";
+	}
+ 
+}
